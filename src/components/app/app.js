@@ -1,9 +1,15 @@
 import React from "react";
+import { Route, Switch } from "react-router-dom";
 import "./app.css";
-import { withBookstoreService } from "../hoc";
+import { HomePage, CartPage } from "../../components/pages";
 
 const App = () => {
-  return <div>App</div>;
+  return (
+    <Switch>
+      <Route path="/" exact component={HomePage} />
+      <Route path="/cart" component={CartPage} />
+    </Switch>
+  );
 };
 
-export default withBookstoreService()(App);
+export default App;
